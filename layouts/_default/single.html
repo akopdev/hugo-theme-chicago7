@@ -2,17 +2,19 @@
 <article>
   <header>
     <h1>{{ .Title }}</h1>
-    <p>
+    <div class="single-meta">
         {{ if not .Params.HideDate }}
           <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "January 2, 2006" }}</time>
         {{ end }}
-        {{ if .Params.Categories }}
-          <category>
-          {{ range .Params.Categories }}
-          <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}" rel="tag">{{ . | title | humanize }}</a>
+         {{ if .Params.tags }}
+            <category>
+              {{ range .Params.tags }}
+              #<a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">
+                {{- . -}}
+              </a>&nbsp;
+              {{ end }}
+            </category>
           {{ end }}
-          </category>
-        {{ end }}
     </p>
   </header>
 

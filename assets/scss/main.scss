@@ -1,0 +1,110 @@
+// Setup Pico Framework
+@use "../../node_modules/@picocss/pico/scss/pico" with (
+  $enable-semantic-container: true,
+  $enable-viewport: true,
+  $enable-responsive-typography: true,
+  $theme-color: "default",
+  $modules: (
+      "forms/input-color": false,
+      "forms/input-date": false,
+      "forms/input-file": false,
+      "forms/input-range": false,
+      "components/dropdown": false,
+      "components/nav": false,
+      "components/tooltip": false,
+      "components/card": false,
+      "utilities/accessibility": false,
+      "utilities/reduce-motion": false,
+      "themes/default": false
+    )
+);
+
+@use "themes/chicago77";
+
+@font-face {
+  font-family: 'ChicagoFLF';
+  src: 
+    local('ChicagoFLF'),
+    url('../fonts/ChicagoFLF.woff2') format('woff2'),
+    url('../fonts/ChicagoFLF.woff') format('woff'),
+    url('../fonts/ChicagoFLF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.8rem;
+}
+
+a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 10%;
+  text-underline-offset: 25%;
+}
+
+
+body > header {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+body > header > .logo {
+  display: block;
+  width: 55px;
+  height: 55px;
+}
+
+body > header menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 0;
+  margin: 0;
+}
+
+body > header > menu > .site-title {
+  font-family: 'ChicagoFLF', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0.6rem 0 0.3rem 0.6rem;
+}
+
+body > header > menu > nav > ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+body > header > menu > nav > ul > li {
+  list-style: none;
+  padding: 0 0.65rem;
+}
+
+body > header > menu > nav > ul  a {
+  font-family: 'ChicagoFLF', sans-serif;
+  text-decoration: none;
+}
+
+article > header > .single-meta {
+  font-size: 0.8rem;
+}
+
+article > header > .single-meta > time {
+  margin-right: 1rem;
+}
+
+article > header > .single-meta > a {
+  text-decoration: none;
+}
+
+footer {
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  margin-top: 2rem;
+  padding: 1rem 0;
+}

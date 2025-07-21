@@ -1,5 +1,6 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
 <meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.Subtitle }}{{ else if .Description}}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
 <meta name="keywords" content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}" />
 {{ if .Params.noindex }}
@@ -11,12 +12,24 @@
 {{ end }}
 <link rel="canonical" href="{{ .Permalink }}" />
 
-{{ $css := resources.Match "css/*.css" }}
-{{ range $css }}
-  {{ $styles := . | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}">
+{{ with resources.Get "scss/main.scss" }}
+  {{ $opts := dict
+    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+    "targetPath" "css/main.css"
+    "transpiler" "dartsass"
+    "vars" site.Params.styles
+    "includePaths" (slice "node_modules/bootstrap/scss")
+  }}
+  {{ with . | toCSS $opts }}
+    {{ if hugo.IsDevelopment }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ else }}
+      {{ with . | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{ end }}
+    {{ end }}
+  {{ end }}
 {{ end }}
-
 <!-- Icons -->
 <link rel="shortcut icon" href="{{ "favicon.png" | absURL }}">
 <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
