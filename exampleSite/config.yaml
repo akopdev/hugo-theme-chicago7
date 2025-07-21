@@ -1,0 +1,35 @@
+baseURL: 'http://gohugo.io/'
+languageCode: 'en-us'
+theme: "hugo-theme-chicago77"
+
+permalinks:
+  notes: /note/:year:month:day
+
+menu:
+  header:
+  - name: "About"
+    url: "about"
+    weight: 40
+
+  - name: "Notes"
+    url: "posts"
+    weight: 30
+
+  - name: "Projects"
+    url: "projects"
+    weight: 20
+
+  - name: "Home"
+    url: "/"
+    weight: 10
+
+params:
+  author: "Akop Kesheshyan"
+  social:
+  - name: "github"
+    url: "https://github.com/gohugoio"
+  - name: "linkedin"
+    url: "https://www.example.com"
+  - name: "email"
+    url: "mailto:email@example.com"
+

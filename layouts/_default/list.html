@@ -1,0 +1,45 @@
+{{ define "main" }}
+<section>
+    <h1>{{ .Title }}</h1>
+
+    {{ with .Content }}
+        {{- . -}}
+    {{ end }}
+
+    {{ range .Paginator.Pages }}
+
+        <!-- [html-validate-disable-next prefer-native-element] -->
+        <div class="postListItem" role="listitem">
+          <a href="{{ .Permalink }}">
+            <div class="postHeader">
+                <div class="postTitle">{{ .Title }}</div>
+            </div>
+          </a>
+            <div class="postMeta">
+            {{ .Date.Format "Jan 2, 2006" }}
+            </div>
+        </div>
+    {{end}}
+    <div class="pagination">
+      <div class="wrapper">
+        {{ if .Paginator.HasPrev }}
+          <span class="button previous">
+            <a href="{{ .Paginator.Prev.URL }}">
+              <span class="button-icon">←</span>
+              <span class="button-text">{{ $.Site.Params.NewerPosts | default "Newer posts" }}</span>
+            </a>
+          </span>
+        {{ end }}
+        {{ if .Paginator.HasNext }}
+          <span class="button next">
+            <a href="{{ .Paginator.Next.URL }}">
+              <span class="button-text">{{ $.Site.Params.OlderPosts | default "Older posts" }}</span>
+              <span class="button-icon">→</span>
+            </a>
+          </span>
+        {{ end }}
+      </div>
+    </div>
+</section>
+
+{{ end }}

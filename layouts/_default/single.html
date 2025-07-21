@@ -1,0 +1,45 @@
+{{ define "main" }}
+<article>
+  <header>
+    <h1>{{ .Title }}</h1>
+    <p>
+        {{ if not .Params.HideDate }}
+          <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "January 2, 2006" }}</time>
+        {{ end }}
+        {{ if .Params.Categories }}
+          <category>
+          {{ range .Params.Categories }}
+          <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}" rel="tag">{{ . | title | humanize }}</a>
+          {{ end }}
+          </category>
+        {{ end }}
+    </p>
+  </header>
+
+{{- /* Featured image */ -}}
+{{- $image := .Params.featuredimage -}}
+{{- with .Resources.GetMatch "featured-image" -}}
+<figure>
+    {{- $image = .RelPermalink -}}
+</figure>
+{{- end -}}
+
+{{- with $image -}}
+<figure>
+    {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "img.html" -}}
+</figure>
+{{- end -}}
+
+{{- /* Table of contents */ -}}
+{{ if or .Params.Toc $.Site.Params.Toc }}
+ {{ if ne .Params.Toc false }}
+<nav aria-label="Table of Contents">
+   {{ .TableOfContents }}
+</nav>
+ {{ end }}
+{{ end }}
+
+{{- /* Content */ -}}
+{{ .Content }}
+</article>
+{{ end }}

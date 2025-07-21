@@ -1,0 +1,67 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.Subtitle }}{{ else if .Description}}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
+<meta name="keywords" content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}" />
+{{ if .Params.noindex }}
+  {{ if or (eq (.Param "noindex") true) (eq (.Param "noindex") "true") }}
+    <meta name="robots" content="noindex" />
+  {{ end }}
+{{ else }}
+  <meta name="robots" content="noodp" />
+{{ end }}
+<link rel="canonical" href="{{ .Permalink }}" />
+
+{{ $css := resources.Match "css/*.css" }}
+{{ range $css }}
+  {{ $styles := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}">
+{{ end }}
+
+<!-- Icons -->
+<link rel="shortcut icon" href="{{ "favicon.png" | absURL }}">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary" />
+{{ if (isset $.Site.Params "twitter") }}
+  {{ if (isset $.Site.Params.Twitter "site") }}
+    <meta name="twitter:site" content="{{ $.Site.Params.Twitter.site }}" />
+  {{ end }}
+    <meta name="twitter:creator" content="{{ if .IsHome }}{{ $.Site.Params.Twitter.creator }}{{ else if isset .Params "authortwitter" }}{{ .Params.authorTwitter }}{{ else }}{{ .Params.Author }}{{ end }}" />
+{{ end }}
+
+<!-- OG data -->
+<meta property="og:locale" content="{{ $.Site.Language.Lang }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:title" content="{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ if .IsHome }}{{ $.Site.Params.Subtitle }}{{ else if .Description}}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ $.Site.Title }}" />
+{{ if (isset .Params "cover") }}
+  {{ $pageCover := .Param "cover" }}
+  {{ with (.Resources.GetMatch (.Param "cover")) }}
+    {{ $pageCover = .RelPermalink }}
+  {{ end }}
+  <meta property="og:image" content="{{ $pageCover | absURL }}">
+{{ else }}
+  <meta property="og:image" content="{{ "og-image.png" | absURL }}">
+{{ end }}
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+{{ range .Params.categories }}
+  <meta property="article:section" content="{{ . }}" />
+{{ end }}
+{{ if isset .Params "date" }}
+  <meta property="article:published_time" content="{{ time .Date }}" />
+{{ end }}
+
+<!-- RSS -->
+{{ with .OutputFormats.Get "RSS" }}
+  <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+{{ end }}
+
+<!-- JSON Feed -->
+{{ with .OutputFormats.Get "json" }}
+  <link href="{{ .RelPermalink }}" rel="alternate" type="application/json" title="{{ $.Site.Title }}" />
+{{ end }}
+
