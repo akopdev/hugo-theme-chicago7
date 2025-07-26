@@ -20,6 +20,7 @@
 );
 
 @use "themes/chicago77";
+@use "../../node_modules/@picocss/pico/scss/settings" as *;
 
 @font-face {
   font-family: 'ChicagoFLF';
@@ -44,11 +45,38 @@ a {
   text-underline-offset: 25%;
 }
 
+.meta{
+  color: var(#{$css-var-prefix}muted-color);
+  font-size: 0.8rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'ChicagoFLF', sans-serif;
+}
+
+hr{
+  opacity: 0.22;
+  overflow: visible;
+  padding: 0;
+  border: none;
+  border-top: medium double var(#{$css-var-prefix}primary);
+  color: var(#{$css-var-prefix}primary);
+  text-align: center;
+}
+
+hr:after {
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  background: var(#{$css-var-prefix}primary-background);
+}
 
 body > header {
   display: flex;
   align-items: center;
-  margin: 0 auto;
 }
 
 body > header > .logo {
@@ -91,20 +119,30 @@ body > header > menu > nav > ul  a {
   text-decoration: none;
 }
 
-article > header > .single-meta {
-  font-size: 0.8rem;
-}
-
-article > header > .single-meta > time {
+article > header > .meta > time {
   margin-right: 1rem;
 }
 
-article > header > .single-meta > a {
+article > header > nav {
+  padding: 1rem 0 2rem 0;
+}
+
+article > header > nav a{
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
   text-decoration: none;
 }
 
+section.posts {
+  grid-template-columns: 6rem 1fr;
+}
+
+
 footer {
-  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-top: 1px solid var(#{$css-var-prefix}muted-color);
   margin-top: 2rem;
   padding: 1rem 0;
+}
+footer p{
+  color: var(#{$css-var-prefix}muted-color);
 }

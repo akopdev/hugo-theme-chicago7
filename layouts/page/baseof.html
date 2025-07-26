@@ -6,9 +6,7 @@
 </head>
 
 <body>
-{{ if not .IsPage }}
-  {{ partial "header.html" . }}
-{{ end }}
+{{ partial "header.html" . }}
 <main>
   {{ block "main" . }}
   {{ end }}

@@ -1,5 +1,6 @@
 +++
 title = "Rich Content"
+date = "2012-02-09"
 tags = ["shortcodes", "privacy", "some-tag-1", "some tag 2", "some tag 3"]
 +++
 

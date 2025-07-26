@@ -7,18 +7,10 @@
     {{ end }}
 
     {{ range .Paginator.Pages }}
-
-        <!-- [html-validate-disable-next prefer-native-element] -->
-        <div class="postListItem" role="listitem">
-          <a href="{{ .Permalink }}">
-            <div class="postHeader">
-                <div class="postTitle">{{ .Title }}</div>
-            </div>
-          </a>
-            <div class="postMeta">
-            {{ .Date.Format "Jan 2, 2006" }}
-            </div>
-        </div>
+    <section class="grid posts">
+        <span class="meta">{{ .Date.Format "Jan 02, 2006" }}</span>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </section>
     {{end}}
     <div class="pagination">
       <div class="wrapper">
