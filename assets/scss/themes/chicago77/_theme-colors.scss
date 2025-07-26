@@ -8,13 +8,13 @@ $color-mappings: (
     "dark": (
       "text-selection-color": rgba($white, 0.25),
       "primary": $white,
-      "primary-background": $white,
+      "primary-background": $black,
       "primary-underline": $white,
       "primary-hover": $white,
       "primary-hover-background": $white,
       "primary-focus": rgba($white, 0.5),
       "primary-inverse": $black,
-      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($white, 0.25),
     ),
     "light": (
       "text-selection-color": rgba($black, 0.25),

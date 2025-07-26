@@ -5,6 +5,10 @@ theme: "hugo-theme-chicago77"
 permalinks:
   notes: /note/:year:month:day
 
+markup:
+  highlight:
+    style: "bw"
+
 menu:
   header:
   - name: "About"
