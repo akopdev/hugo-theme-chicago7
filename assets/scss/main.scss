@@ -5,34 +5,31 @@
   $enable-responsive-typography: true,
   $theme-color: "default",
   $modules: (
+      "components/card": false,
+      "components/dropdown": false,
+      "components/nav": false,
+      "components/tooltip": false,
+
+      "forms/checkbox-radio-switch": false,
       "forms/input-color": false,
       "forms/input-date": false,
       "forms/input-file": false,
       "forms/input-range": false,
-      "components/dropdown": false,
-      "components/nav": false,
-      "components/tooltip": false,
-      "components/card": false,
+
+      "themes/default": false,
+
       "utilities/accessibility": false,
       "utilities/reduce-motion": false,
-      "themes/default": false
     )
 );
-
-@use "themes/chicago77";
 @use "../../node_modules/@picocss/pico/scss/settings" as *;
 
-@font-face {
-  font-family: 'ChicagoFLF';
-  src: 
-    local('ChicagoFLF'),
-    url('../fonts/ChicagoFLF.woff2') format('woff2'),
-    url('../fonts/ChicagoFLF.woff') format('woff'),
-    url('../fonts/ChicagoFLF.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+// Styles
+@use "theme/styles";
+@use "theme/schemes";
+
+// Custom fonts
+@use "theme/typography";
 
 html {
   font-size: 16px;
@@ -45,10 +42,6 @@ a {
   text-underline-offset: 25%;
 }
 
-.meta{
-  color: var(#{$css-var-prefix}muted-color);
-  font-size: 0.8rem;
-}
 
 h1, h2, h3, h4, h5 {
   font-family: 'ChicagoFLF', sans-serif;
@@ -62,6 +55,7 @@ hr{
   border-top: medium double var(#{$css-var-prefix}primary);
   color: var(#{$css-var-prefix}primary);
   text-align: center;
+  margin: 3rem 0;
 }
 
 hr:after {
@@ -72,6 +66,23 @@ hr:after {
   font-size: 1.5em;
   padding: 0 0.25em;
   background: var(#{$css-var-prefix}primary-background);
+}
+
+:not(pre) > code {
+  border: 0.1rem solid;
+}
+
+pre {
+  border: 0.1rem solid;
+  box-shadow: 4px 4px 0px black;
+  padding: 1em;
+  width: 100%;
+  background: var(#{$css-var-prefix}code-background-color) !important;
+}
+
+.meta {
+  color: var(#{$css-var-prefix}muted-color);
+  font-size: 0.8rem;
 }
 
 body > header {
@@ -139,10 +150,10 @@ section.posts {
 
 
 footer {
-  border-top: 1px solid var(#{$css-var-prefix}muted-color);
-  margin-top: 2rem;
+  border-top: medium double var(#{$css-var-prefix}primary);
   padding: 1rem 0;
 }
+
 footer p{
   color: var(#{$css-var-prefix}muted-color);
 }
