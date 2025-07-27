@@ -1,0 +1,13 @@
+@use "../../node_modules/@picocss/pico/scss/settings" as *;
+
+footer {
+  border-top: medium double var(#{$css-var-prefix}primary);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+footer p{
+  color: var(#{$css-var-prefix}muted-color);
+  font-family: var(#{$css-var-prefix}font-family-header);
+  font-size: 0.9rem;
+}

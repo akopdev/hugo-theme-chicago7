@@ -15,8 +15,8 @@
       </defs>
       </svg>
   </a>
-  <menu>
-      <a href="{{ $.Site.BaseURL }}" class="site-title">{{ .Site.Params.author }}</a>
+  <hgroup>
+      <h1><a href="{{ $.Site.BaseURL }}">{{ .Site.Params.author }}</a></h1>
       <nav aria-label="Main navigation">
           <ul>
               {{ $current := . }}
@@ -30,6 +30,6 @@
               {{ end }}
           </ul>
       </nav>
-  </menu>
+  </hgroup>
 </header>
 

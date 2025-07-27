@@ -1,0 +1,45 @@
+@use "../../node_modules/@picocss/pico/scss/settings" as *;
+
+article {
+  nav {
+    padding: 1rem 0 2rem 0;
+    a {
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+  }
+
+  header {
+    margin-bottom: 1rem;
+
+    time {
+      color: var(#{$css-var-prefix}muted-color);
+      white-space: nowrap;
+    }
+
+    nav {
+      justify-content: left;
+      padding: 0.5rem 0 1rem 0;
+
+      ul {
+        display: block;
+
+        &:last-of-type {
+          margin-left: 0
+        }
+
+        li {
+          padding: calc(var(#{$css-var-prefix}nav-element-spacing-vertical)/2) var(#{$css-var-prefix}nav-element-spacing-horizontal);       
+
+          a {
+            border: 0.1rem solid;
+            box-shadow: 2px 2px 0px black;
+            padding: 0 0.65rem;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}

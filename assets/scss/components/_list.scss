@@ -1,0 +1,10 @@
+@use "../../node_modules/@picocss/pico/scss/settings" as *;
+
+.posts {
+  grid-template-columns: 6rem 1fr;
+
+  .meta {
+    color: var(#{$css-var-prefix}muted-color);
+    font-size: 0.8rem;
+  }
+}

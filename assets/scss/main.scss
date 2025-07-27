@@ -7,7 +7,6 @@
   $modules: (
       "components/card": false,
       "components/dropdown": false,
-      "components/nav": false,
       "components/tooltip": false,
 
       "forms/checkbox-radio-switch": false,
@@ -28,132 +27,8 @@
 @use "theme/styles";
 @use "theme/schemes";
 
-// Custom fonts
-@use "theme/typography";
-
-html {
-  font-size: 16px;
-  line-height: 1.8rem;
-}
-
-a {
-  text-decoration-line: underline;
-  text-decoration-thickness: 10%;
-  text-underline-offset: 25%;
-}
-
-
-h1, h2, h3, h4, h5 {
-  font-family: 'ChicagoFLF', sans-serif;
-}
-
-hr{
-  opacity: 0.22;
-  overflow: visible;
-  padding: 0;
-  border: none;
-  border-top: medium double var(#{$css-var-prefix}primary);
-  color: var(#{$css-var-prefix}primary);
-  text-align: center;
-  margin: 3rem 0;
-}
-
-hr:after {
-  content: "§";
-  display: inline-block;
-  position: relative;
-  top: -0.7em;
-  font-size: 1.5em;
-  padding: 0 0.25em;
-  background: var(#{$css-var-prefix}primary-background);
-}
-
-:not(pre) > code {
-  border: 0.1rem solid;
-}
-
-pre {
-  border: 0.1rem solid;
-  box-shadow: 4px 4px 0px black;
-  padding: 1em;
-  width: 100%;
-  background: var(#{$css-var-prefix}code-background-color) !important;
-}
-
-.meta {
-  color: var(#{$css-var-prefix}muted-color);
-  font-size: 0.8rem;
-}
-
-body > header {
-  display: flex;
-  align-items: center;
-}
-
-body > header > .logo {
-  display: block;
-  width: 55px;
-  height: 55px;
-}
-
-body > header menu {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-left: 0;
-  margin: 0;
-}
-
-body > header > menu > .site-title {
-  font-family: 'ChicagoFLF', sans-serif;
-  font-size: 1.8rem;
-  font-weight: bold;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  margin: 0.6rem 0 0.3rem 0.6rem;
-}
-
-body > header > menu > nav > ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
-
-body > header > menu > nav > ul > li {
-  list-style: none;
-  padding: 0 0.65rem;
-}
-
-body > header > menu > nav > ul  a {
-  font-family: 'ChicagoFLF', sans-serif;
-  text-decoration: none;
-}
-
-article > header > .meta > time {
-  margin-right: 1rem;
-}
-
-article > header > nav {
-  padding: 1rem 0 2rem 0;
-}
-
-article > header > nav a{
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-}
-
-section.posts {
-  grid-template-columns: 6rem 1fr;
-}
-
-
-footer {
-  border-top: medium double var(#{$css-var-prefix}primary);
-  padding: 1rem 0;
-}
-
-footer p{
-  color: var(#{$css-var-prefix}muted-color);
-}
+// Components
+@use "components/header";
+@use "components/footer";
+@use "components/single";
+@use "components/list";

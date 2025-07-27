@@ -3,19 +3,28 @@
 @use "../../node_modules/@picocss/pico/scss/settings" as *;
 @use "../../node_modules/@picocss/pico/scss/helpers/functions";
 @use "theme-colors";
+@use "typography";
 
 /**
  * Styles
  */
 
+html {
+  font-size: 16px;
+  line-height: 1.8rem;
+}
+
 :root,
 :host {
+
   // Typography
+  #{$css-var-prefix}font-family-header:
+    "ChicagoFLF";
   #{$css-var-prefix}font-family-emoji:
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   #{$css-var-prefix}font-family-monospace:
     "Roboto Mono", SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace,
-    var(#{$css-var-prefix}font-family-emoji);
+    var(#{$css-var-prefix}font-family-header), var(#{$css-var-prefix}font-family-emoji);
   #{$css-var-prefix}font-family: var(#{$css-var-prefix}font-family-monospace);
   #{$css-var-prefix}line-height: 1.6;
   #{$css-var-prefix}font-weight: 400;
@@ -209,6 +218,9 @@
 // Link
 @if map.get($modules, "content/link") {
   a {
+    text-decoration-thickness: 10%;
+    text-underline-offset: 25%;
+
     #{$css-var-prefix}text-decoration: underline;
 
     // Secondary & Contrast
@@ -218,6 +230,28 @@
         #{$css-var-prefix}text-decoration: underline;
       }
     }
+  }
+}
+
+// Separator
+hr{
+  opacity: 0.22;
+  overflow: visible;
+  padding: 0;
+  border: none;
+  border-top: medium double var(#{$css-var-prefix}primary);
+  color: var(#{$css-var-prefix}primary);
+  text-align: center;
+  margin: 3rem 0;
+
+  &:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: var(#{$css-var-prefix}primary-background);
   }
 }
 
@@ -236,6 +270,7 @@
   h5,
   h6 {
     #{$css-var-prefix}font-weight: 700;
+    #{$css-var-prefix}font-family: var(#{$css-var-prefix}font-family-header);
   }
 
   h1 {
@@ -286,6 +321,18 @@
 
   kbd {
     #{$css-var-prefix}font-weight: bolder;
+  }
+
+  :not(pre) > code {
+    border: 0.1rem solid;
+  }
+
+  pre {
+    border: 0.1rem solid;
+    box-shadow: 4px 4px 0px black;
+    padding: 1em;
+    width: 100%;
+    background: var(#{$css-var-prefix}code-background-color) !important;
   }
 }
 

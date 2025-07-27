@@ -1,24 +1,24 @@
 {{ define "main" }}
 <article>
+  <nav aria-label="All posts">
+    <a href="{{ .Section | relURL }}">&larr; Back to All Posts</a>
+  </nav>
   <header>
-    <nav aria-label="All posts">
-      <a href="{{ .Section | relURL }}">← Back to All Posts</a>
-    </nav>
     <h1>{{ .Title }}</h1>
-    <div class="meta">
-        {{ if not .Params.HideDate }}
-          <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "January 02, 2006" }}</time>
-        {{ end }}
-         {{ if .Params.tags }}
-            <category>
-              {{ range .Params.tags }}
-              <a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">
-                #{{- . -}}
-              </a>
-              {{ end }}
-            </category>
+    <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "January 02, 2006" }}</time>
+    {{ if .Params.tags }}
+     <nav>
+          <ul>
+          {{ range .Params.tags }}
+          <li>
+            <a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">
+            {{- . -}}
+            </a>
+          </li>
           {{ end }}
-    </p>
+          </ul>
+     </nav>
+    {{ end }}
   </header>
 
 {{- /* Featured image */ -}}
