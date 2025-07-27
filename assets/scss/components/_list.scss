@@ -1,10 +1,32 @@
 @use "../../node_modules/@picocss/pico/scss/settings" as *;
 
+section > header {
+  margin-bottom: 2rem;
+}
+
+.meta {
+  color: var(#{$css-var-prefix}muted-color);
+  font-size: 0.8rem;
+
+  a {
+    border: 0.1rem solid;
+    box-shadow: 2px 2px 0px black;
+    padding: 0.3rem 0.65rem;
+    white-space: nowrap;
+    text-decoration: none;
+    border-radius: var(#{$css-var-prefix}border-radius);
+  }
+}
+
 .posts {
   grid-template-columns: 6rem 1fr;
+}
 
-  .meta {
-    color: var(#{$css-var-prefix}muted-color);
-    font-size: 0.8rem;
+
+.tags {
+  grid-template-columns: 2rem 1fr;
+  color: var(#{$css-var-prefix}muted-color);
+  span {
+    text-align: center;
   }
 }

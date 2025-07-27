@@ -1,6 +1,9 @@
 {{ define "main" }}
 <section>
-    <h1>{{ .Title }}</h1>
+    <header>
+      <h1>{{ .Title }}</h1>
+      <p class="meta">You can also filter by <a href="{{ "tags" | relURL }}">tags</a> or <a href="">years</a></p>
+    </header>
 
     {{ with .Content }}
         {{- . -}}
@@ -33,5 +36,4 @@
       </div>
     </div>
 </section>
-
 {{ end }}

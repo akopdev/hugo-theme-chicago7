@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section>
+    <header>
+      <h1>Tags</h1>
+      <p class="meta">You can also filter by <a href="">years</a></p>
+    </header>
+    <section class="grid tags">
+      {{ range sort .Data.Terms "Count" "desc" }}
+        <span>{{ .Count }}</span>
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+      {{ end }}
+    </section>
+</section>
+{{ end }}
