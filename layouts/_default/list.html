@@ -2,7 +2,7 @@
 <section>
     <header>
       <h1>{{ .Title }}</h1>
-      <p class="meta">You can also filter by <a href="{{ "tags" | relURL }}">tags</a> or <a href="">years</a></p>
+      <p class="meta">You can also filter by <a href="{{ "tags" | relURL }}">tags</a> or <a href="{{ "/archive/" | absURL }}">years</a></p>
     </header>
 
     {{ with .Content }}
@@ -11,7 +11,7 @@
 
     {{ range .Paginator.Pages }}
     <section class="grid posts">
-        <span class="meta">{{ .Date.Format "Jan 02, 2006" }}</span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}" class="meta">{{ .Date.Format "Jan 02, 2006" }}</time>
         <a href="{{ .Permalink }}">{{ .Title }}</a>
     </section>
     {{end}}

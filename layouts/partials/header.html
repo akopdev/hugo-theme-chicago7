@@ -6,12 +6,7 @@
           <ul>
               {{ $current := . }}
               {{ range .Site.Menus.header.ByWeight }}
-              <li>
-               {{ $active := or ($current.IsMenuCurrent "header" .) ($current.HasMenuCurrent "header" .) }}
-               {{ $active = or $active (eq .Name $current.Title) }}
-               {{ $active = or $active (and (eq .Name "blog") (eq $current.Section .URL)) }}
-                  <a href="{{ .URL | relURL }}" {{ if $active }}class="active"{{ end }} title="{{ .Title }}" >{{- .Name -}}</a>
-              </li>
+              <li><a href="{{ .URL | relURL }}">{{- .Name -}}</a></li>
               {{ end }}
           </ul>
       </nav>

@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section>
+    <header>
+      <h1>{{ .Title }}</h1>
+      <p class="meta">You can also filter by <a href="{{ "tags" | relURL }}">tags</a></p>
+    </header>
+
+  {{ range (.Site.RegularPages.GroupByDate "2006") }}
+    <h2>{{ .Key }}</h2>
+    <section class="grid posts">
+      {{ range .Pages }}
+          <time class="meta" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02" }}</time>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ end }}
+    </section>
+  {{ end }}
+</section>
+{{ end }}

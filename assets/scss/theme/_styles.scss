@@ -324,7 +324,9 @@ hr{
   }
 
   :not(pre) > code {
-    border: 0.1rem solid;
+    border: 0;
+    background: var(#{$css-var-prefix}primary);
+    color: var(#{$css-var-prefix}primary-inverse);
   }
 
   pre {
