@@ -21,20 +21,6 @@
     {{ end }}
   </header>
 
-{{- /* Featured image */ -}}
-{{- $image := .Params.featuredimage -}}
-{{- with .Resources.GetMatch "featured-image" -}}
-<figure>
-    {{- $image = .RelPermalink -}}
-</figure>
-{{- end -}}
-
-{{- with $image -}}
-<figure>
-    {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "img.html" -}}
-</figure>
-{{- end -}}
-
 {{- /* Table of contents */ -}}
 {{ if or .Params.Toc $.Site.Params.Toc }}
  {{ if ne .Params.Toc false }}

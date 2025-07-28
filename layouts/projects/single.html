@@ -1,0 +1,46 @@
+{{ define "main" }}
+<article>
+  <nav aria-label="All projects">
+    <a href="{{ .Section | relURL }}">&larr; Back to All Projects</a>
+  </nav>
+  <header>
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.repository }}
+     <nav>
+          <ul>
+            <li>
+              <a href="{{ .Params.repository | absLangURL }}">Repository</a>
+            </li>
+          </ul>
+     </nav>
+    {{ end }}
+  </header>
+
+{{- /* Table of contents */ -}}
+{{ if or .Params.Toc $.Site.Params.Toc }}
+ {{ if ne .Params.Toc false }}
+<nav aria-label="Table of Contents">
+   {{ .TableOfContents }}
+</nav>
+ {{ end }}
+{{ end }}
+
+{{- /* Content */ -}}
+{{ .Content }}
+
+
+{{- /* Relevant posts */ -}}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $relatedPages := where $posts "Params.tags" "intersect" (slice .Params.projectTagName) }}
+{{ if gt (len $relatedPages) 0 }}
+  <h2>See also</h2>
+  <section class="grid posts">
+    {{ range $relatedPages }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}" class="meta">{{ .Date.Format "Jan 02, 2006" }}</time>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
+  </section>
+{{ end }}
+
+</article>
+{{ end }}

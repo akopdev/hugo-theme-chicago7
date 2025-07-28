@@ -5,6 +5,7 @@ description = "Sample article showcasing basic Markdown syntax and formatting fo
 tags = [
     "themes",
     "syntax",
+    "System 7"
 ]
 +++
 

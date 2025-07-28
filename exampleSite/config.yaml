@@ -3,7 +3,7 @@ languageCode: 'en-us'
 theme: "hugo-theme-chicago77"
 
 permalinks:
-  notes: /note/:year:month:day
+  posts: /posts/:year:month:day
 
 markup:
   highlight:
@@ -15,7 +15,7 @@ menu:
     url: "about"
     weight: 40
 
-  - name: "Notes"
+  - name: "Posts"
     url: "posts"
     weight: 30
 

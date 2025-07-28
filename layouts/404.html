@@ -1,4 +1,6 @@
 {{ define "main" }}
-<h1>404</h1> 
-<p>{{ $.Site.Params.missingContentMessage | default "Page not found..." }}</p>
+<section class="not-found-404">
+  <h1>404</h1> 
+  <p>{{ $.Site.Params.missingContentMessage | default "Page not found..." }}</p>
+</section>
 {{ end }}
