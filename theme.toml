@@ -1,8 +1,8 @@
-name = "Chicago77"
+name = "Chicago7"
 license = "MIT"
-licenselink = "https://github.com/akopdev/hugo-theme-chicago77/blob/master/LICENSE"
-description = "Chicago77 theme for Hugo"
-homepage = "https://github.com/akopdev/hugo-theme-chicago77/"
+licenselink = "https://github.com/akopdev/hugo-theme-chicago7/blob/master/LICENSE"
+description = "Chicago7 theme for Hugo"
+homepage = "https://github.com/akopdev/hugo-theme-chicago7/"
 tags = ["minimal", "blog", "sass"]
 features = ["blog", "sass", "minimal"]
 min_version = "0.80.0"

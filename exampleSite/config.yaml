@@ -1,6 +1,6 @@
 baseURL: 'http://gohugo.io/'
 languageCode: 'en-us'
-theme: "hugo-theme-chicago77"
+theme: "hugo-theme-chicago7"
 
 permalinks:
   posts: /posts/:year:month:day
@@ -28,7 +28,7 @@ menu:
     weight: 10
 
 params:
-  author: "Akop Kesheshyan"
+  author: "Chicago Example"
   social:
   - name: "github"
     url: "https://github.com/gohugoio"
