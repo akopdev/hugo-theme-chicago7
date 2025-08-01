@@ -2,8 +2,8 @@
 <p align="center">Embracing the power of less</p>
 <p align="center"><a href="https://akop.dev/hugo-theme-chicago7">Live Demo</a></p>
 
-![Chicago7 Hugo Theme](https://github.com/akopdev/hugo-theme-chicago7/blob/main/docs/screenshot-01.png)
-![Chicago7 Hugo Theme](https://github.com/akopdev/hugo-theme-chicago7/blob/main/docs/screenshot-02.png)
+![Chicago7 Hugo Theme](https://github.com/akopdev/hugo-theme-chicago7/blob/main/images/tn.png)
+![Chicago7 Hugo Theme](https://github.com/akopdev/hugo-theme-chicago7/blob/main/images/screenshot.png)
 
 ## Features
 - Minimalistic and lightweight color scheme built with [PicoCSS](https://picocss.com/). No JavaScript or complicated tooling.
