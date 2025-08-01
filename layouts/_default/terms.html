@@ -2,7 +2,7 @@
 <section>
     <header>
       <h1>Tags</h1>
-      <p class="meta">You can also filter by <a href="{{ "/archive/" | absURL }}">years</a></p>
+      <p class="meta">You can also filter by <a href="{{ "archive" | relURL }}">years</a></p>
     </header>
     <section class="grid tags">
       {{ range sort .Data.Terms "Count" "desc" }}
