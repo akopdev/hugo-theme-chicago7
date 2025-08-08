@@ -67,10 +67,22 @@ menu:
 params:
   author: "Your Name"
   social:
-  - name: "github"
-    url: "https://github.com/gohugoio"
-  - name: "linkedin"
-    url: "https://www.example.com"
-  - name: "email"
-    url: "mailto:email@example.com"
+    twitter: https://x.com/example
+    behance: "https://behance.net/yourprofile"
+    facebook: "https://facebook.com/yourprofile"
 ```
+
+*Supported social media links*:
+
+- Behance  
+- Dribbble 
+- Facebook 
+- Feed     
+- Gplus    
+- Instagram
+- Linkedin 
+- Pinterest
+- Soundcloud
+- Vimeo    
+- Twitter        
+- Youtube  

@@ -19,6 +19,7 @@
 // Dark color scheme (Auto)
 // Automatically enabled if user has Dark mode enabled
 @media only screen and (prefers-color-scheme: dark) {
+
   :root:not([data-theme]),
   :host(:not([data-theme])) {
     @include dark.theme;

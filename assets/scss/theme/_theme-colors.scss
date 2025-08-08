@@ -4,9 +4,7 @@
 @use "../../node_modules/@picocss/pico/scss/settings" as *;
 
 $color-mappings: (
-  "default": (
-    "dark": (
-      "text-selection-color": rgba($white, 0.25),
+  "default": ("dark": ("text-selection-color": rgba($white, 0.25),
       "primary": $white,
       "primary-background": $black,
       "primary-underline": $white,
@@ -16,8 +14,7 @@ $color-mappings: (
       "primary-inverse": $black,
       "switch-thumb-box-shadow": 0 0 0.5rem rgba($white, 0.25),
     ),
-    "light": (
-      "text-selection-color": rgba($black, 0.25),
+    "light": ("text-selection-color": rgba($black, 0.25),
       "primary": $black,
       "primary-background": $white,
       "primary-underline": $black,

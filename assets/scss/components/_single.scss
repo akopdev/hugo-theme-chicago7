@@ -3,6 +3,7 @@
 article {
   nav {
     padding: 1rem 0 2rem 0;
+
     a {
       font-size: 0.9rem;
       letter-spacing: 0.05em;
@@ -30,7 +31,7 @@ article {
         }
 
         li {
-          padding: calc(var(#{$css-var-prefix}nav-element-spacing-vertical)/2) var(#{$css-var-prefix}nav-element-spacing-horizontal);       
+          padding: calc(var(#{$css-var-prefix}nav-element-spacing-vertical)/2) var(#{$css-var-prefix}nav-element-spacing-horizontal);
 
           a {
             border: 0.1rem solid;

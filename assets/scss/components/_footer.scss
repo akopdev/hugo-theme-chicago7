@@ -5,10 +5,18 @@ footer {
   padding: 1rem 0;
   text-align: center;
   margin-top: 2rem;
-}
 
-footer p{
-  color: var(#{$css-var-prefix}muted-color);
-  font-family: var(#{$css-var-prefix}font-family-header);
-  font-size: 0.9rem;
+  .social {
+    justify-content: center;
+
+    img {
+      max-width: 2rem;
+    }
+  }
+
+  p {
+    color: var(#{$css-var-prefix}muted-color);
+    font-family: var(#{$css-var-prefix}font-family-header);
+    font-size: 0.9rem;
+  }
 }

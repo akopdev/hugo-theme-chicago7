@@ -1,6 +1,6 @@
 @use "../../node_modules/@picocss/pico/scss/settings" as *;
 
-section > header {
+section>header {
   margin-bottom: 2rem;
 }
 
@@ -26,6 +26,7 @@ section > header {
 .tags {
   grid-template-columns: 2rem 1fr;
   color: var(#{$css-var-prefix}muted-color);
+
   span {
     text-align: center;
   }

@@ -1,6 +1,6 @@
 @use "../../node_modules/@picocss/pico/scss/settings" as *;
 
-body > header {
+body>header {
   display: flex;
   align-items: center;
 
@@ -13,6 +13,7 @@ body > header {
 
     h1 {
       margin-top: 0.3rem;
+
       a {
         font-size: 1.8rem;
         position: relative;
@@ -24,6 +25,7 @@ body > header {
     nav {
       li {
         padding: 0 0.65rem;
+
         a {
           font-family: var(#{$css-var-prefix}font-family-header);
           text-decoration: none;
