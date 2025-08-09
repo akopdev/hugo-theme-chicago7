@@ -26,7 +26,8 @@
       {{ with $url }}
         <li>
           <a href="{{ . }}" target="_blank" rel="noopener noreferrer">
-            <img src="{{ "icons/" | relURL }}{{ $icon }}" alt="{{ $key }} icon" />
+            {{ $svgPath := printf "static/icons/%s" $icon }}
+            {{ readFile $svgPath | safeHTML }}
           </a>
         </li>
       {{ end }}
