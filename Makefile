@@ -17,7 +17,7 @@ install:
 	@npm install
 
 # -------------------------------------------------------------------------------------------------
-# server: @ Run a high performance webserver with example site
+# start: @ Run a local webserver with example site
 # -------------------------------------------------------------------------------------------------
 start:
 	@hugo server --theme ../.. --source exampleSite/ --disableFastRender

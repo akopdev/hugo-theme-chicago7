@@ -32,6 +32,7 @@ article {
 
         li {
           padding: calc(var(#{$css-var-prefix}nav-element-spacing-vertical)/2) var(#{$css-var-prefix}nav-element-spacing-horizontal);
+          padding-right: 1.2rem;
 
           a {
             border: 0.1rem solid;
