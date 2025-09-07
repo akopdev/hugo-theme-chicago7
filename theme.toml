@@ -1,8 +1,9 @@
 name = "Chicago7"
 license = "MIT"
 licenselink = "https://github.com/akopdev/hugo-theme-chicago7/blob/master/LICENSE"
-description = "Chicago7 theme for Hugo"
+description = "A minimal, retro-inspired Hugo theme with an Apple System 7 aesthetic and zero JS"
 homepage = "https://github.com/akopdev/hugo-theme-chicago7/"
+demosite = "https://akop.dev/hugo-theme-chicago7/"
 tags = ["minimal", "blog", "sass", "retro", "monotone", "clean", "personal", "responsive"]
 features = ["blog", "sass", "minimal"]
 min_version = "0.90.0"
