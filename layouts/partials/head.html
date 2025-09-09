@@ -31,9 +31,7 @@
   {{ end }}
 {{ end }}
 <!-- Icons -->
-<link rel="shortcut icon" href="{{ "favicon.png" | absURL }}">
-<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
-
+<link rel="shortcut icon" href="{{ .Site.Params.Favicon | default "favicon.svg" | relURL }}" >
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary" />
 {{ if (isset $.Site.Params "twitter") }}
@@ -42,7 +40,6 @@
   {{ end }}
     <meta name="twitter:creator" content="{{ if .IsHome }}{{ $.Site.Params.Twitter.creator }}{{ else if isset .Params "authortwitter" }}{{ .Params.authorTwitter }}{{ else }}{{ .Params.Author }}{{ end }}" />
 {{ end }}
-
 <!-- OG data -->
 <meta property="og:locale" content="{{ $.Site.Language.Lang }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
@@ -57,17 +54,13 @@
   {{ end }}
   <meta property="og:image" content="{{ $pageCover | absURL }}">
 {{ else }}
-  <meta property="og:image" content="{{ "og-image.png" | absURL }}">
 {{ end }}
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="627">
 {{ range .Params.categories }}
   <meta property="article:section" content="{{ . }}" />
 {{ end }}
 {{ if isset .Params "date" }}
   <meta property="article:published_time" content="{{ time .Date }}" />
 {{ end }}
-
 <!-- RSS -->
 {{ with .OutputFormats.Get "RSS" }}
   <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />

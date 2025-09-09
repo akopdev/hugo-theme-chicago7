@@ -1,0 +1,39 @@
+baseURL = "http://gohugo.io/"
+languageCode = "en-us"
+theme = "hugo-theme-chicago7"
+
+[permalinks]
+posts = "/posts/:year:month:day"
+
+[markup]
+[markup.highlight]
+style = "bw"
+
+[menu]
+[[menu.header]]
+name = "About"
+url = "about"
+weight = 40
+
+[[menu.header]]
+name = "Posts"
+url = "posts"
+weight = 30
+
+[[menu.header]]
+name = "Projects"
+url = "projects"
+weight = 20
+
+[[menu.header]]
+name = "Home"
+url = "/"
+weight = 10
+
+[params]
+author = "Chicago Example"
+
+[params.social]
+twitter = "https://x.com/example"
+behance = "https://behance.net/yourprofile"
+facebook = "https://facebook.com/yourprofile"
