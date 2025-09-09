@@ -1,4 +1,4 @@
-@use "../../node_modules/@picocss/pico/scss/settings" as *;
+@use "../core/settings" as *;
 
 section>header {
   margin-bottom: 2rem;

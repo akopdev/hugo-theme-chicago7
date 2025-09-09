@@ -1,5 +1,5 @@
 // Setup Pico Framework
-@use "../../node_modules/@picocss/pico/scss/pico" with (
+@use "core/pico" with (
   $enable-semantic-container: true,
   $enable-viewport: true,
   $enable-responsive-typography: true,
@@ -21,7 +21,7 @@
       "utilities/reduce-motion": false,
     )
 );
-@use "../../node_modules/@picocss/pico/scss/settings" as *;
+@use "core/settings" as *;
 
 // Styles
 @use "theme/styles";

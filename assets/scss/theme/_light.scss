@@ -1,8 +1,8 @@
 @use "sass:color";
 @use "sass:map";
-@use "../../node_modules/@picocss/pico/scss/colors" as *;
-@use "../../node_modules/@picocss/pico/scss/settings" as *;
-@use "../../node_modules/@picocss/pico/scss/helpers/functions";
+@use "../core/colors" as *;
+@use "../core/settings" as *;
+@use "../core/helpers/functions";
 @use "theme-colors";
 
 // Default: Light theme
