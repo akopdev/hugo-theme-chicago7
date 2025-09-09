@@ -1,3 +1,6 @@
-<a href="{{ $.Site.BaseURL }}" class="logo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mac_OS_Bomb.svg" alt="" width="55">
-</a>
+{{ if .Site.Params.Logo }}
+    <a href="{{ $.Site.BaseURL }}" class="logo">
+        <img src="{{ .Site.Params.Logo | relURL }}" alt="{{ .Site.Title }}" width="55">
+    </a>
+{{ end }}
+

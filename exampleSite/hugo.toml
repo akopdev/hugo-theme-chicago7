@@ -32,6 +32,10 @@ url = "/"
 weight = 10
 
 [params]
+# Optional. The relative path to the site logo file within the `assets/` folder
+logo = "logo.svg"
+
+# Web site author for copyrighting
 author = "Blog Author"
 
 [params.social]

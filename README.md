@@ -60,42 +60,8 @@ hugo server
 
 ## How to configure
 
-The theme doesn't require any advanced configuration. Just copy to your `hugo.toml`:
-
-```toml
-[markup]
-[markup.highlight]
-  style = "bw"
-
-[menu]
-[[menu.header]]
-  name = "About"
-  url = "about"
-  weight = 40
-
-[[menu.header]]
-  name = "Posts"
-  url = "posts"
-  weight = 30
-
-[[menu.header]]
-  name = "Projects"
-  url = "projects"
-  weight = 20
-
-[[menu.header]]
-  name = "Home"
-  url = "/"
-  weight = 10
-
-[params]
-author = "Your Name"
-
-[params.social]
-  twitter = "https://x.com/example"
-  behance = "https://behance.net/yourprofile"
-  facebook = "https://facebook.com/yourprofile"
-```
+There are a few configuration options that you can add to your `hugo.toml` file.
+Check (example site)[exampleSite/hugo.toml] for more info.
 
 *Supported social media links*:
 
