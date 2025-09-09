@@ -2,7 +2,13 @@
 <p align="center">Embracing the power of less</p>
 <p align="center"><a href="https://akop.dev/hugo-theme-chicago7">Live Demo</a></p>
 
+
+[![Chicago7](https://img.shields.io/badge/Hugo--Themes-@Chicago7-blue)](https://themes.gohugo.io/themes/hugo-theme-chicago7/)
+[![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=>=v0.90.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.146.0)
+[![GitHub](https://img.shields.io/github/license/adityatelange/hugo-PaperMod)](https://github.com/akopdev/hugo-theme-chicago7/blob/main/LICENSE)
+
 ![Chicago7 Hugo Theme](https://github.com/akopdev/hugo-theme-chicago7/blob/main/images/tn.png)
+
 ![Chicago7 Hugo Theme](https://github.com/akopdev/hugo-theme-chicago7/blob/main/images/screenshot.png)
 
 ## Features
@@ -61,7 +67,7 @@ hugo server
 ## How to configure
 
 There are a few configuration options that you can add to your `hugo.toml` file.
-Check (example site)[exampleSite/hugo.toml] for more info.
+Check [example site](exampleSite/hugo.toml) for more info.
 
 *Supported social media links*:
 
