@@ -17,7 +17,7 @@
 The easiest way is to download the theme from GitHub and copy it into `themes/chicago7`, or clone it directly using Git.
 
 ```sh
-git clone https://github.com/akopdev/hugo-theme-chicago7.git  themes/chicago7
+git submodule add https://github.com/akopdev/hugo-theme-chicago7.git themes/chicago7
 ```
 
 ### Install as a Hugo Module
@@ -25,51 +25,76 @@ git clone https://github.com/akopdev/hugo-theme-chicago7.git  themes/chicago7
 You can also install the theme as a Hugo module. Keep in mind that, by default, the theme will not appear in the themes directory. 
 This means you’ll be using the version of the theme exactly as it exists in the repository at the time you fetch it.
 
-```sh
-hugo mod get github.com/akopdev/hugo-theme-chicago7
+Add theme link to `hugo.toml` file:
+
+```toml
+theme = ['github.com/akopdev/hugo-theme-chicago7']
 ```
 
-and in your config file add:
+Although specifying modules in the theme array works fine, you have more control if you explicitly import the theme as a module:
 
 ```toml
 [module]
 [[module.imports]]
-  path = 'github.com/akopdev/hugo-theme-chicago7'
+path = 'github.com/akopdev/hugo-theme-chicago7'
 ```
+Then, to load/update the theme module and run hugo:
+
+```sh
+hugo mod get -u
+hugo server --minify
+```
+
+### Example of creating site from scratch
+
+Below is an example on how to create a new site from scratch:
+
+```sh
+hugo new site my-blog
+cd my-blog
+hugo mod init github.com/<username>/my-blog
+echo "theme = ['github.com/akopdev/hugo-theme-chicago7']" >> hugo.toml
+hugo server
+```
+
 
 ## How to configure
 
-The theme doesn't require any advanced configuration. Just copy to your `config.yaml`:
+The theme doesn't require any advanced configuration. Just copy to your `hugo.toml`:
 
-```yaml
-markup:
-  highlight:
-    style: "bw"
+```toml
+[markup]
+[markup.highlight]
+  style = "bw"
 
-menu:
-  header:
-  - name: "About"
-    url: "about"
-    weight: 40
+[menu]
+[[menu.header]]
+  name = "About"
+  url = "about"
+  weight = 40
 
-  - name: "Posts"
-    url: "posts"
-    weight: 30
+[[menu.header]]
+  name = "Posts"
+  url = "posts"
+  weight = 30
 
-  - name: "Projects"
-    url: "projects"
-    weight: 20
+[[menu.header]]
+  name = "Projects"
+  url = "projects"
+  weight = 20
 
-  - name: "Home"
-    url: "/"
-    weight: 10
+[[menu.header]]
+  name = "Home"
+  url = "/"
+  weight = 10
 
-params:
-  author: "Your Name"
-  social:
-    twitter: https://x.com/example
-    behance: "https://behance.net/yourprofile"
-    facebook: "https://facebook.com/yourprofile"
+[params]
+author = "Your Name"
+
+[params.social]
+  twitter = "https://x.com/example"
+  behance = "https://behance.net/yourprofile"
+  facebook = "https://facebook.com/yourprofile"
 ```
 
 *Supported social media links*:
