@@ -1,4 +1,5 @@
 baseURL = "http://gohugo.io/"
+title = "Chicago 7 Example"
 languageCode = "en-us"
 theme = "hugo-theme-chicago7"
 
@@ -31,9 +32,10 @@ url = "/"
 weight = 10
 
 [params]
-author = "Chicago Example"
+author = "Blog Author"
 
 [params.social]
 twitter = "https://x.com/example"
 behance = "https://behance.net/yourprofile"
 facebook = "https://facebook.com/yourprofile"
+feed = "/index.xml"
