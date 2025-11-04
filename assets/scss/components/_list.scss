@@ -7,15 +7,6 @@ section>header {
 .meta {
   color: var(#{$css-var-prefix}muted-color);
   font-size: 0.8rem;
-
-  a {
-    border: 0.1rem solid;
-    box-shadow: 2px 2px 0px black;
-    padding: 0.3rem 0.65rem;
-    white-space: nowrap;
-    text-decoration: none;
-    border-radius: var(#{$css-var-prefix}border-radius);
-  }
 }
 
 .posts {
@@ -30,4 +21,8 @@ section>header {
   span {
     text-align: center;
   }
+}
+
+.pagination {
+  margin-top: 2rem;
 }

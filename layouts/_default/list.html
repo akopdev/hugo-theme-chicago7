@@ -2,7 +2,7 @@
 <section>
     <header>
       <h1>{{ .Title }}</h1>
-      <p class="meta">You can also filter by <a href="{{ "tags" | relURL }}">tags</a> or <a href="{{ "archive" | relURL }}">years</a></p>
+      <p class="meta">You can also filter by <a href="{{ "tags" | relURL }}" class="button">tags</a> or <a href="{{ "archive" | relURL }}" class="button">years</a></p>
     </header>
 
     {{ with .Content }}
@@ -15,25 +15,8 @@
         <a href="{{ .Permalink }}">{{ .Title }}</a>
     {{end}}
     </section>
-    <div class="pagination">
-      <div class="wrapper">
-        {{ if .Paginator.HasPrev }}
-          <span class="button previous">
-            <a href="{{ .Paginator.Prev.URL }}">
-              <span class="button-icon">←</span>
-              <span class="button-text">{{ $.Site.Params.NewerPosts | default "Newer posts" }}</span>
-            </a>
-          </span>
-        {{ end }}
-        {{ if .Paginator.HasNext }}
-          <span class="button next">
-            <a href="{{ .Paginator.Next.URL }}">
-              <span class="button-text">{{ $.Site.Params.OlderPosts | default "Older posts" }}</span>
-              <span class="button-icon">→</span>
-            </a>
-          </span>
-        {{ end }}
-      </div>
-    </div>
+
+    {{ partial "pagination.html" . }}
+
 </section>
 {{ end }}

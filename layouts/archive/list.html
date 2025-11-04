@@ -2,7 +2,7 @@
 <section>
     <header>
       <h1>{{ .Title }}</h1>
-      <p class="meta">You can also filter by <a href="{{ "tags" | relURL }}">tags</a></p>
+      <p class="meta">You can also filter by <a href="{{ "tags" | relURL }}" class="button">tags</a></p>
     </header>
 
   {{ range (.Site.RegularPages.GroupByDate "2006") }}
@@ -14,5 +14,9 @@
       {{ end }}
     </section>
   {{ end }}
+
+
+  {{ partial "pagination.html" . }}
+
 </section>
 {{ end }}

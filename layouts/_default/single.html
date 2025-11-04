@@ -11,7 +11,7 @@
           <ul>
           {{ range .Params.tags }}
           <li>
-            <a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">
+            <a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}" class="button">
             {{- . -}}
             </a>
           </li>

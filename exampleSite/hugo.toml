@@ -2,6 +2,7 @@ baseURL = "http://gohugo.io/"
 title = "Chicago 7 Example"
 languageCode = "en-us"
 theme = "hugo-theme-chicago7"
+pagination.pagerSize = 10
 
 [permalinks]
 posts = "/posts/:year:month:day"

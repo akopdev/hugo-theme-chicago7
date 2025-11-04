@@ -1,0 +1,12 @@
+@use "../core/settings" as *;
+
+a.button {
+  border: 0.1rem solid;
+  box-shadow: 2px 2px 0px black;
+  padding: 0 0.65rem;
+  white-space: nowrap;
+  text-decoration: none;
+  border-radius: var(#{$css-var-prefix}border-radius);
+  font-family: var(#{$css-var-prefix}font-family-header);
+  display: inline-block;
+}
