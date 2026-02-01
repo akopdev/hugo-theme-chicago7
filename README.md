@@ -72,6 +72,7 @@ Check [example site](exampleSite/hugo.toml) for more info.
 *Supported social media links*:
 
 - Behance  
+- Goodreads
 - Dribbble 
 - Facebook 
 - Feed     
