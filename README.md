@@ -75,11 +75,12 @@ Check [example site](exampleSite/hugo.toml) for more info.
 - Dribbble 
 - Facebook 
 - Feed     
+- Github  
 - Gplus    
 - Instagram
 - Linkedin 
 - Pinterest
 - Soundcloud
-- Vimeo    
 - Twitter        
+- Vimeo    
 - Youtube  
